@@ -1,0 +1,67 @@
+BASHPID (test.sh, before source confmoule): 13697
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+BASHPID (test.sh, before source confmoule): 13703
+BASHPID (after DEBCONF_REDIR): 13703
+BASHPID (test.sh, after source confmoule): 13703
+DEBIAN_HAS_FRONTEND: 1
+DEBCONF_REDIR: 1
+_db_cmd () 
+    _db_internal_IFS="$IFS";
+    IFS="$_db_internal_IFS";
+' read -r _db_internal_line;
+    RET="${_db_internal_line#[! 	][ 	]}";
+    case ${_db_internal_line%%[ 	]*} in 
+    return ${_db_internal_line%%[ 	]*}
+db_beginblock () 
+    _db_cmd "BEGINBLOCK $@"
+db_capb () 
+    _db_cmd "CAPB $@"
+db_clear () 
+    _db_cmd "CLEAR $@"
+db_data () 
+    _db_cmd "DATA $@"
+db_endblock () 
+    _db_cmd "ENDBLOCK $@"
+db_fget () 
+    _db_cmd "FGET $@"
+db_fset () 
+    _db_cmd "FSET $@"
+db_get () 
+    _db_cmd "GET $@"
+db_go () 
+    _db_cmd "GO $@"
+db_info () 
+    _db_cmd "INFO $@"
+db_input () 
+    _db_cmd "INPUT $@"
+db_metaget () 
+    _db_cmd "METAGET $@"
+db_previous_module () 
+    _db_cmd "PREVIOUS_MODULE $@"
+db_progress () 
+    _db_cmd "PROGRESS $@"
+db_purge () 
+    _db_cmd "PURGE $@"
+db_register () 
+    _db_cmd "REGISTER $@"
+db_reset () 
+    _db_cmd "RESET $@"
+db_set () 
+    _db_cmd "SET $@"
+db_settitle () 
+    _db_cmd "SETTITLE $@"
+db_stop () 
+db_subst () 
+    _db_cmd "SUBST $@"
+db_text () 
+    db_input $@
+db_title () 
+    _db_cmd "TITLE $@"
+db_unregister () 
+    _db_cmd "UNREGISTER $@"
+db_version () 
+    _db_cmd "VERSION $@"
+db_x_loadtemplatefile () 
+    _db_cmd "X_LOADTEMPLATEFILE $@"
+GET apt-setup/volatile_host
+volatile.debian.org
